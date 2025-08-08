@@ -1,8 +1,11 @@
 import * as React from "react";
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function Button({ asChild, variant = "default", className, children, ...props }: any) {
 
-export function Button({ asChild, variant = "default", className, children, ...props }: any) {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  asChild?: boolean;
+  variant?: "default" | "outline";
+}
+
+export function Button({ asChild, variant = "default", className, children, ...props }: ButtonProps) {
   const base = "px-4 py-2 rounded-md text-sm font-medium transition-colors";
   const styles = variant === "outline"
     ? "border border-gray-300 bg-transparent hover:bg-gray-100"
