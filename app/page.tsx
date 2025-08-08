@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Heart, Quote, Shield, Anchor, ArrowRight, Sparkles, Users } from "lucide-react";
@@ -9,8 +7,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { stories } from "@/lib/storiesData";
 
-
-const Section = ({ id, title, subtitle, children }: { id: string; title: string; subtitle?: string; children: React.ReactNode }) => (
+const Section = ({
+  id,
+  title,
+  subtitle,
+  children,
+}: {
+  id: string;
+  title: string;
+  subtitle?: string;
+  children: React.ReactNode;
+}) => (
   <section id={id} className="py-14 md:py-20">
     <div className="max-w-5xl mx-auto px-4">
       <motion.div
@@ -84,7 +91,9 @@ export default function SurvivorSite() {
             </div>
             <div className="mt-6 flex gap-3">
               <Button asChild>
-                <a href="#stories" className="inline-flex items-center gap-2">Read Stories <ArrowRight className="w-4 h-4" /></a>
+                <a href="#stories" className="inline-flex items-center gap-2">
+                  Read Stories <ArrowRight className="w-4 h-4" />
+                </a>
               </Button>
               <Button variant="outline" asChild>
                 <a href="#youre-not-crazy">Reality Check</a>
@@ -95,7 +104,11 @@ export default function SurvivorSite() {
       </section>
 
       {/* Real Stories */}
-      <Section id="stories" title="Real Stories (Anonymous or Not)" subtitle="Survivors want to feel less alone. Raw, unfiltered stories = validation.">
+      <Section
+        id="stories"
+        title="Real Stories (Anonymous or Not)"
+        subtitle="Survivors want to feel less alone. Raw, unfiltered stories = validation."
+      >
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -104,7 +117,10 @@ export default function SurvivorSite() {
           className="grid md:grid-cols-3 gap-6"
         >
           {stories.map((story, index) => (
-            <motion.div key={index} variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}>
+            <motion.div
+              key={index}
+              variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
+            >
               <Card className="rounded-2xl shadow-md">
                 <CardContent className="p-6 space-y-4">
                   <h3 className="text-xl font-semibold">{story.title}</h3>
@@ -117,7 +133,11 @@ export default function SurvivorSite() {
       </Section>
 
       {/* You’re Not Crazy */}
-      <Section id="youre-not-crazy" title="You’re Not Crazy: How Narcissists Warp Your Reality" subtitle="If you feel confused after every disagreement, that’s not a flaw — it’s a tactic used on you.">
+      <Section
+        id="youre-not-crazy"
+        title="You’re Not Crazy: How Narcissists Warp Your Reality"
+        subtitle="If you feel confused after every disagreement, that’s not a flaw — it’s a tactic used on you."
+      >
         <div className="grid gap-6 md:grid-cols-2">
           <Card className="rounded-2xl shadow-md">
             <CardContent className="p-6 space-y-4">
@@ -184,13 +204,17 @@ export default function SurvivorSite() {
                 <li>• Consider trauma-informed therapy for education and skills (information only; not medical advice).</li>
                 <li>• If you feel unsafe, explore local hotlines and legal options in your region.</li>
               </ul>
-              <div className="text-xs text-muted-foreground">This site is educational and not a substitute for personalized medical, legal, or safety advice.</div>
+              <div className="text-xs text-muted-foreground">
+                This site is educational and not a substitute for personalized medical, legal, or safety advice.
+              </div>
             </CardContent>
           </Card>
           <Card className="rounded-2xl">
             <CardContent className="p-6 space-y-4">
               <h3 className="text-lg font-semibold">Share your story</h3>
-              <p className="text-sm md:text-base">Your voice can help someone find clarity. Submit an anonymous story (change names and details for safety) and we may feature it.</p>
+              <p className="text-sm md:text-base">
+                Your voice can help someone find clarity. Submit an anonymous story (change names and details for safety) and we may feature it.
+              </p>
               <div className="flex gap-3">
                 <Button asChild>
                   <a href="#stories">Read more stories</a>
@@ -207,7 +231,9 @@ export default function SurvivorSite() {
       {/* Footer */}
       <footer className="border-t py-10 mt-6">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Healing After Narcissists — Educational content only. No tailored medical advice.</p>
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Healing After Narcissists — Educational content only. No tailored medical advice.
+          </p>
           <div className="flex gap-4 text-sm">
             <a href="#stories" className="hover:underline">Stories</a>
             <a href="#youre-not-crazy" className="hover:underline">Reality Check</a>
@@ -218,4 +244,3 @@ export default function SurvivorSite() {
     </div>
   );
 }
-
