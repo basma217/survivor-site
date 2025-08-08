@@ -19,7 +19,7 @@ export function Button({
       ? "border border-gray-300 bg-transparent hover:bg-gray-100"
       : "bg-primary text-white hover:bg-primary/90";
 
-  const Comp: any = asChild ? "span" : "button";
+  const Comp: React.ElementType = asChild ? "span" : "button";
   return (
     <Comp className={`${base} ${styles} ${className}`} {...props}>
       {children}

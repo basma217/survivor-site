@@ -1,11 +1,14 @@
 "use client";
 
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
-import { Heart, Quote, Shield, Anchor, ArrowRight, BookOpen, CheckCircle, Sparkles, Brain, Users } from "lucide-react";
+import { Heart, Quote, Shield, Anchor, ArrowRight, Sparkles, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { stories } from "@/lib/storiesData";
+
 
 const Section = ({ id, title, subtitle, children }: { id: string; title: string; subtitle?: string; children: React.ReactNode }) => (
   <section id={id} className="py-14 md:py-20">
