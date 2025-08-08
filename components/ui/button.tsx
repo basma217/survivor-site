@@ -1,4 +1,6 @@
 import * as React from "react";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function Button({ asChild, variant = "default", className, children, ...props }: any) {
 
 export function Button({ asChild, variant = "default", className, children, ...props }: any) {
   const base = "px-4 py-2 rounded-md text-sm font-medium transition-colors";
