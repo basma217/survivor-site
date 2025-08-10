@@ -10,5 +10,29 @@ export const stories = [
   {
     title: "“When I first met Leo, I thought he was just confident...”",
     text: "When I first met Leo, I thought he was just confident — maybe a little arrogant, but in a funny, charismatic way. But that confidence quickly turned into control. He isolated me from my friends, belittled me in front of others with a smile, and made me question every decision I made. I spent years thinking I wasn’t good enough, until one day, I finally broke through the fog and left for good."
+  },
+  {
+    title: "“The compliment hijack”",
+    text: "When people praised my work, he’d jump in with a bigger story about himself. I started shrinking so there’d be no praise to steal."
+  },
+  {
+    title: "“Am I overreacting?”",
+    text: "Every time I cried, she said I was ‘too sensitive.’ I kept a journal and realized the pattern wasn’t me — it was the minimizing."
+  },
+  {
+    title: "“Rewriting the past”",
+    text: "He’d deny promising things he clearly promised. Screenshots helped me trust my memory again."
+  },
+  {
+    title: "“Credit collector”",
+    text: "Our team nailed a release. My manager took all the credit and called my work ‘support.’ I learned to document contributions."
+  },
+  {
+    title: "“Walking on eggshells”",
+    text: "I rehearsed every text before sending it. Healthy relationships don’t make you fear basic communication."
+  },
+  {
+    title: "“The calm after leaving”",
+    text: "Silence felt weird at first. Then it felt like peace. That’s when I knew I wasn’t ‘crazy’ — I was recovering."
   }
 ];
