@@ -1,104 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  /* Light mode palette — “light pink & power” */
-  --background: #fff7fb;
-  --foreground: #1f2937;
-
-  --primary: #db2777;
+  --background: #ffeaf4;
+  --foreground: #5b0a3b;
+  --primary: #ff3c8e;
+  --primary-hover: #e2337e;
   --primary-foreground: #ffffff;
-
-  --muted: #ffe4ef;
-  --muted-foreground: #6b7280;
-
-  --card: #ffffff;
-  --card-foreground: var(--foreground);
-
-  --border: #fbcfe8;
-
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --muted: #ffd6e7;
+  --muted-foreground: #7a1e4d;
+  --border: #ffb3d9;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
   --color-primary-foreground: var(--primary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
   --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/* Optional dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0b0a0c;
-    --foreground: #f8fafc;
-    --primary: #f472b6;
-    --primary-foreground: #0b0a0c;
-    --muted: #2b1e27;
-    --muted-foreground: #cbd5e1;
-    --card: #131217;
-    --card-foreground: var(--foreground);
-    --border: #4c1d95;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-}
-
-::selection {
-  background: color-mix(in oklab, var(--primary) 30%, transparent);
-}
-@import "tailwindcss";
-
-/* Light theme tokens */
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-
-  /* add these */
-  --primary: #7c3aed;                /* purple-600 vibe */
-  --muted: #f3f4f6;                   /* gray-100 */
-  --muted-foreground: #6b7280;        /* gray-500 */
-}
-
-/* Dark theme tokens */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-
-    /* tweak for dark mode */
-    --primary: #8b5cf6;
-    --muted: #111827;                 /* gray-900 */
-    --muted-foreground: #9ca3af;      /* gray-400 */
+    --primary: #ff3c8e;
+    --primary-hover: #e2337e;
+    --primary-foreground: #ffffff;
+    --muted: #553344;
+    --muted-foreground: #f5cde2;
+    --border: #7a1e4d;
   }
 }
 
-/* Map tokens to Tailwind “semantic” utilities */
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* (optional) keep this if you want a global fallback */
-body {
-  background: var(--background);
-  color: var(--foreground);
+a {
+  color: var(--primary);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: var(--primary-hover);
 }

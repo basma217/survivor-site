@@ -23,8 +23,8 @@ export function Button({
     "px-4 py-2 rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center gap-2";
   const styles =
     variant === "outline"
-      ? "border border-gray-300 bg-transparent hover:bg-gray-100"
-      : "bg-primary text-white hover:bg-primary/90";
+      ? "border border-primary text-primary bg-transparent hover:bg-primary/10 hover:text-primary-hover hover:border-primary-hover"
+      : "bg-primary text-primary-foreground hover:bg-primary-hover";
 
   if (asChild) {
     const anchorProps = props as AnchorElProps;
