@@ -98,7 +98,7 @@ function Progress({ current, total }: { current: number; total: number }) {
 /** ─────────────────────────────────────────────────────────────────────────────
  * Page
  * ────────────────────────────────────────────────────────────────────────────*/
-export default function QuizPage(): JSX.Element {
+export default function QuizPage()  {
   const [index, setIndex] = React.useState(0);
   const [selected, setSelected] = React.useState<number | null>(null);
   const [score, setScore] = React.useState(0);
