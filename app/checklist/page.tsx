@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Heart, Quote, Shield, Anchor, ArrowRight, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Section from "@/components/ui/section";
+import Section from "@/components/ui/Section";
 import { stories } from "@/lib/storiesData";
 
 const Badge = ({ children }: { children: React.ReactNode }) => (
