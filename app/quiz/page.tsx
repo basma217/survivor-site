@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link"; // ✅ Added
 
 /** ─────────────────────────────────────────────────────────────────────────────
  * Types & Data
@@ -63,7 +64,7 @@ const SCENARIOS: Scenario[] = [
     ],
     correctIndex: 2,
     explanation:
-      "Devaluing or withdrawing when others get attention points to fragile self‑esteem and envy—both common in narcissistic dynamics.",
+      "Devaluing or withdrawing when others get attention points to fragile self-esteem and envy—both common in narcissistic dynamics.",
   },
 ];
 
@@ -76,7 +77,9 @@ function Progress({ current, total }: { current: number; total: number }) {
     <div className="w-full">
       <div className="flex items-center justify-between mb-2 text-sm text-slate-600">
         <span>
-          Question <span className="font-semibold text-slate-800">{current + 1}</span> / {total}
+          Question{" "}
+          <span className="font-semibold text-slate-800">{current + 1}</span> /{" "}
+          {total}
         </span>
         <span className="font-medium">{pct}%</span>
       </div>
@@ -106,11 +109,11 @@ export default function QuizPage(): JSX.Element {
   const finished = index === total - 1 && showFeedback;
 
   function handlePick(optionIndex: number) {
-    if (showFeedback) return; // lock after showing feedback
+    if (showFeedback) return;
     setSelected(optionIndex);
     const isCorrect = optionIndex === current.correctIndex;
     if (isCorrect) setScore((s) => s + 1);
-    setShowFeedback(true); // enable Next
+    setShowFeedback(true);
   }
 
   function handleNext() {
@@ -154,7 +157,9 @@ export default function QuizPage(): JSX.Element {
 
         {/* Card */}
         <div className="rounded-2xl border border-pink-200 bg-white shadow-sm p-6 space-y-5">
-          <h2 className="text-lg md:text-xl font-extrabold text-pink-800">{current.title}</h2>
+          <h2 className="text-lg md:text-xl font-extrabold text-pink-800">
+            {current.title}
+          </h2>
           <p className="text-sm md:text-base text-slate-700">{current.scene}</p>
 
           <div className="rounded-xl border border-pink-100 bg-pink-50 p-4">
@@ -184,7 +189,9 @@ export default function QuizPage(): JSX.Element {
                   disabled={showFeedback}
                   className={[
                     base,
-                    isChosen ? "ring-2 ring-pink-400 shadow-sm scale-[1.01]" : "hover:bg-pink-50",
+                    isChosen
+                      ? "ring-2 ring-pink-400 shadow-sm scale-[1.01]"
+                      : "hover:bg-pink-50",
                     correctColor,
                     wrongColor,
                     showFeedback ? "cursor-default" : "cursor-pointer",
@@ -206,7 +213,9 @@ export default function QuizPage(): JSX.Element {
                 className="rounded-xl border p-4 bg-gradient-to-br from-pink-50 to-rose-50"
               >
                 <p className="font-bold text-pink-900 mb-1">
-                  {selected === current.correctIndex ? "Correct ✅" : "Not quite ❌"}
+                  {selected === current.correctIndex
+                    ? "Correct ✅"
+                    : "Not quite ❌"}
                 </p>
                 <p className="text-slate-700">{current.explanation}</p>
               </motion.div>
@@ -216,7 +225,9 @@ export default function QuizPage(): JSX.Element {
           {/* Controls */}
           <div className="flex items-center justify-between pt-2">
             <span className="text-sm text-slate-600">
-              Score: <span className="font-semibold text-slate-900">{score}</span> / {total}
+              Score:{" "}
+              <span className="font-semibold text-slate-900">{score}</span> /{" "}
+              {total}
             </span>
 
             {!finished ? (
@@ -224,7 +235,10 @@ export default function QuizPage(): JSX.Element {
                 onClick={handleNext}
                 disabled={!showFeedback}
                 initial={false}
-                animate={{ opacity: showFeedback ? 1 : 0.5, scale: showFeedback ? 1 : 0.98 }}
+                animate={{
+                  opacity: showFeedback ? 1 : 0.5,
+                  scale: showFeedback ? 1 : 0.98,
+                }}
                 className="px-4 py-2 rounded-md text-sm font-extrabold tracking-wide bg-pink-600 text-white hover:bg-pink-700 disabled:cursor-not-allowed"
               >
                 {index + 1 < total ? "Next" : "Finish"}
@@ -249,16 +263,18 @@ export default function QuizPage(): JSX.Element {
           >
             <h3 className="text-xl font-black text-pink-800">All done 🎉</h3>
             <p className="text-slate-700">
-              You scored <span className="font-semibold text-pink-900">{score}</span> out of {total}.
-              Power isn’t shouting the loudest—it’s seeing the pattern and choosing yourself.
+              You scored{" "}
+              <span className="font-semibold text-pink-900">{score}</span> out
+              of {total}. Power isn’t shouting the loudest—it’s seeing the
+              pattern and choosing yourself.
             </p>
             <div className="flex gap-3">
-              <a
+              <Link
                 href="/"
                 className="px-4 py-2 rounded-md text-sm font-extrabold bg-pink-600 text-white hover:bg-pink-700"
               >
                 Read Real Stories
-              </a>
+              </Link>
               <button
                 onClick={handleRestart}
                 className="px-4 py-2 rounded-md text-sm font-extrabold border border-pink-300 text-pink-800 hover:bg-pink-50"
